@@ -1,3 +1,4 @@
+require('./src/server');
 const { Ollama } = require('ollama');
 const { createApp } = require('./app');
 
