@@ -829,4 +829,99 @@
   <div id="root" aria-live="polite"></div>
   <script src="app.js" type="module"></script>
 </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentic Business Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <h1>Agentic Business Studio</h1>
+        <p>
+          Autonomously research, design, and launch businesses with built-in ethical guardrails and
+          community-first automation.
+        </p>
+        <div class="hero__actions">
+          <button id="createPlanBtn" class="primary">Generate Mission Plan</button>
+          <button id="executePlanBtn" class="secondary" disabled>Run Autonomy Sprint</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Mission Control</h2>
+        <form id="planForm" class="form">
+          <label>
+            Business Goal
+            <input type="text" id="goalInput" placeholder="Launch a climate-positive logistics platform" required />
+          </label>
+          <label>
+            Industry Focus
+            <input type="text" id="industryInput" placeholder="Logistics" />
+          </label>
+          <label>
+            Operating Region
+            <input type="text" id="regionInput" placeholder="Global" />
+          </label>
+          <label>
+            Target Persona
+            <input type="text" id="personaInput" placeholder="Solo Founder" />
+          </label>
+          <label>
+            Constraints & Notes
+            <textarea id="constraintsInput" rows="3" placeholder="Prefer open-source tooling and transparent pricing"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section class="panel" id="planPanel" hidden>
+        <div class="panel__header">
+          <h2>Autonomous Plan</h2>
+          <span id="riskBadge" class="badge">Risk: --</span>
+        </div>
+        <div id="planSummary" class="plan-summary"></div>
+        <ol id="planSteps" class="plan-steps"></ol>
+      </section>
+
+      <section class="panel" id="executionPanel" hidden>
+        <div class="panel__header">
+          <h2>Execution Log</h2>
+          <button id="refreshLogsBtn" class="secondary">Refresh</button>
+        </div>
+        <div id="executionTimeline" class="timeline"></div>
+      </section>
+
+      <section class="panel" id="ethicsPanel">
+        <h2>Ethics & Impact</h2>
+        <div id="ethicsContent" class="stack"></div>
+      </section>
+
+      <section class="panel" id="pluginsPanel">
+        <h2>Available Agents & Plugins</h2>
+        <div id="pluginList" class="plugin-grid"></div>
+      </section>
+
+      <section class="panel" id="feedbackPanel">
+        <h2>Community Roadmap</h2>
+        <div id="roadmapContent" class="stack"></div>
+        <form id="feedbackForm" class="form inline">
+          <input type="email" id="feedbackEmail" placeholder="email(optional)@example.com" />
+          <input type="text" id="feedbackMessage" placeholder="Suggest a capability or share impact" required />
+          <button type="submit" class="primary">Send Feedback</button>
+        </form>
+        <div id="feedbackStatus" class="status"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built for ethical, autonomous business creation. Open-source. Community-driven.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>
